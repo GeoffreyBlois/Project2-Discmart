@@ -8,14 +8,13 @@ export default function MainNavBar(){
     const navigate = useNavigate();
 
     return(
+       
         <nav>
-             <div className="header2">
-             <img src={Logo} alt="Logo"></img>
-            <h8>Welcome to FRITTTE</h8>
-            
-            
-            
+             <div className="header">
 
+             <img src={Logo} alt="Logo"></img>
+            <h1>Welcome to FRITTTE</h1>
+            </div>
             <div className="headerPic">
             <img src={Image}></img>
             </div>
