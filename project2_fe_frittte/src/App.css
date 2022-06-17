@@ -229,6 +229,8 @@ h8 {
 .body4 {
   font-family: var(--font-roboto);
   background-color: #FDBB2F;
+  width: 100%;
+    height: 100%;
 }
 
   .wrapper {
