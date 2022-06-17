@@ -7,14 +7,23 @@ export default function MainNavBar(){
     const navigate = useNavigate();
 
     return(
+       
         <nav>
+
              <div className="header">
+             <div class="header">
+
              <img src={Logo} alt="Logo"></img>
             <h1>Welcome to FRITTTE</h1>
-            
             </div>
 
             <div className="headerPic">
+
+            <center>
+            <Button onClick={() => navigate("/login")}>Login</Button>
+            <Button onClick={() => navigate("/register")}>Sign Up</Button>
+            <Button onClick={() => navigate("/Food-Items")}>View all Food Items</Button>
+
             <img src={Image}></img>
             </div>
             <div className="mainBar">
