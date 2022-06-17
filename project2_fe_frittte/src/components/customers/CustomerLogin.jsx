@@ -18,23 +18,16 @@ export default function CustomerLogin(){
         username:usernameInput.current.value,
         password:passwordInput.current.value,   
         };
-        console.log(user)
         try{
             const getResponse = await axios.get(`${url}/customer/findCustomer?id=${usernameInput.current.value}`)
-            console.log(getResponse+2);
         
             console.log(usernameInput.current.value)
             const response = await axios.post(`${url}/auth`, userInput)
             setUser({...user, username: userInput.username})
-            console.log("This is after we set the user ", getResponse);
-            console.log(user)
-            console.log(response.data , "Hello")
             
         if(getResponse.data.admin === true){
-            
-                
                 navigate("/admindashboard");
-            } else{
+        } else if(getResponse.data.admin === false){
                 navigate("/customerdashboard");
                
             }
@@ -49,13 +42,18 @@ export default function CustomerLogin(){
     
     return(
         <>
-        <h3>Please Login Below</h3>
+           <div class="header">
+             <h3>Please Login Below</h3>
+            </div>
+        <center>
+        
         <br></br>
-        <input placeholder="Enter your Username" ref={usernameInput}></input>
-        <input placeholder="Enter your Password" ref={passwordInput}></input>
-         
+        <input TextField style ={{width: '15%' , borderWidth: 1}}  placeholder="Enter your Username" ref={usernameInput}></input>
         <br></br>
-        <Button onClick={Login}>Login</Button>
+        <input TextField style ={{width: '15%' , borderWidth: 1 }}  placeholder="Enter your Password" ref={passwordInput}></input> 
+        <br></br>
+        <Button onClick={Login} >Login</Button>
+        </center>
         
         
         </>
