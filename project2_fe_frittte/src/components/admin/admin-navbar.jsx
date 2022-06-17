@@ -3,7 +3,8 @@ import { Button } from "@mui/material";
 import { userContext } from "../../App";
 import { useContext } from "react";
 import adminimage from "../../adminimage.jpg"
-import Logo from "../../WalmartlogoResized.jpg";
+import Logo from "../../Walmartlogo.jpg";
+import yellowbody from "../../yellowbody.png";
 
 export default function AdminNavBar() {
     const [user] = useContext(userContext);
@@ -34,7 +35,11 @@ export default function AdminNavBar() {
             <br></br>
 
             <img src={adminimage}></img>
+            <br></br>
+            <img src={yellowbody}></img>
             </body>
+            
+
             </center>
 
         </nav>

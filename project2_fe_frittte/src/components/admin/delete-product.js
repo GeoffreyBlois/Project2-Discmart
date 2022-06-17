@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import axios from "axios";
 import { Button } from "@mui/material";
-import Logo from "../../WalmartlogoResized.jpg";
+import Logo from "../../Walmartlogo.jpg";
 
 
 export default function DeleteProduct() {
