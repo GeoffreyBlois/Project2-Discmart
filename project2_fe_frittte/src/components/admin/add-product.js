@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRef, useState } from "react";
 import { Button } from "@mui/material";
-import Logo from "../../WalmartlogoResized.jpg";
+import Logo from "../../Walmartlogo.jpg";
 
 export default function AddProduct() {
 
