@@ -21,7 +21,7 @@ export default function UpdateOrder() {
         
         const item = {
             
-        
+            id: num,
             orderDate: input1.current.value,
             itemName: input2.current.value,
             comment: input3.current.value,
