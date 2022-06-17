@@ -4,7 +4,7 @@ import { userContext } from "../../App";
 import { useContext } from "react";
 
 export default function AdminNavBar() {
-    const [user, setUser] = useContext(userContext);
+    const [user] = useContext(userContext);
     const navigate = useNavigate();
 
     function LogOut(){

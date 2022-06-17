@@ -4,7 +4,6 @@ import { useRef, useState } from "react"
 export default function AddProduct() {
 
     const idInput = useRef();
-    //const itemNameInput = useRef();
     const costInput = useRef();
     const weightInput = useRef();
     const volumeInput = useRef();
@@ -74,9 +73,10 @@ export default function AddProduct() {
         <button onClick={getItem}>Press to Find a Food item</button>
         <br></br>
         <br></br>
-        <input className="Placeholder" placeholder="Enter your item id" ref={idInput}></input>
-        {/* <input placeholder="Enter your item name" ref={itemNameInput}></input> */}
-        <input className="Placeholder" placeholder="Enter your item cost" ref={costInput}></input>
+
+        <input placeholder="Enter your item id" ref={idInput}></input>
+        <input placeholder="Enter your item cost" ref={costInput}></input>
+
         <br></br>
         <br></br>
         <input className="Placeholder"  placeholder="Enter your item weight" ref={weightInput}></input>
