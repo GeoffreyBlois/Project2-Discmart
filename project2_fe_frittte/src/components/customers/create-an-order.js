@@ -5,6 +5,7 @@ import { userContext } from "../../App";
 export default function UpdateOrder() {
 
     const [user, setUser] = useContext(userContext);
+    const [num, setNum] = useState(0);
     
     
     const input1 = useRef();
@@ -14,6 +15,10 @@ export default function UpdateOrder() {
     
 
     async function updatedOrder() {
+        
+        const current = new Date();
+        const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+        
         const item = {
             
         
@@ -37,6 +42,12 @@ export default function UpdateOrder() {
             alert(error.response.data);
         }
     }
+    
+    function randomNumberInRange(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+    const click = () => {setNum(randomNumberInRange(1,100000))}
 
     return (
         <>
@@ -46,7 +57,7 @@ export default function UpdateOrder() {
             <input placeholder="Order Date" ref={input1}></input>
             <input placeholder="Item name" ref={input2}></input>
             <input placeholder="Comment" ref={input3}></input>
-            <button onClick={newOrder}>Order</button>
+            <Button variant="contained" onClick={() => {click(); createOrder()}}>Add comment to order it right now</Button>
  
             <h4>Update your order here please</h4>
             <input placeholder="ID" ref={input1}></input>
