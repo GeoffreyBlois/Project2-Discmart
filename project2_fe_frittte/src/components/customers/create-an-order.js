@@ -25,15 +25,13 @@ export default function UpdateOrder() {
 
         try {
 
-            const response = await axios.post("http://localhost:9006/order", item );
+            const response = await axios.post("https://frittte.azurewebsites.net/order", item );
             
-            // const response = await axios.put("http://localhost:9006/updateOrder", item);
-
             console.log(response.data);
             
             
         } catch (error) {
-            console.error(error.response.data);
+            console.error(error);
             alert(error.response.data);
         }
     }
@@ -48,13 +46,6 @@ export default function UpdateOrder() {
             <input placeholder="Comment" ref={input3}></input>
             <button onClick={CreateOrder}>Order</button>
  
-            {/* <h4>Update your order here please</h4>
-            <input placeholder="ID" ref={input1}></input>
-            <input placeholder="Order Date" ref={input2}></input>
-            <input placeholder="Item name" ref={input3}></input>
-            <input placeholder="Comment" ref={input4}></input>
-            <button onClick={updatedOrder}>Update Order</button> */}
-
         </>
     )
 }

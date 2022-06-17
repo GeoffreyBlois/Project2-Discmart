@@ -6,11 +6,14 @@ import { Button } from "@mui/material";
 
 export default function CustomerNavBar(){
     const [user, setUser] = useContext(userContext);
-    console.log(user);
     
     
     const navigate = useNavigate();
 
+    function LogOut(){
+        user.username = "Guest";
+        navigate("/")
+    }
 
     return(
         <nav>
@@ -20,11 +23,11 @@ export default function CustomerNavBar(){
             <Button onClick={() => navigate("/create-an-order")}>Order</Button>
             <Button onClick={() => navigate("/view-my-orders")}>View My Orders</Button>
             <Button onClick={() => navigate("/update-an-order")}>Update Order</Button>
-            <Button onClick={() => navigate("/addanaccount")}>create an account</Button>
             <Button onClick={() => navigate("/updateanaccount")}>update an account</Button>
             <Button onClick={() => navigate("/deleteanaccount")}>delete an account</Button>
             <Button onClick={() => navigate("/make-payment")}>pay your balance</Button>
             <Button onClick={() => navigate("/creditcarddashboard")}>Credit Card</Button>
+            <Button onClick={LogOut}>Log Out</Button>
             </center>
         </nav>
     )

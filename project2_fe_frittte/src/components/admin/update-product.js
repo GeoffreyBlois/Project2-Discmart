@@ -12,7 +12,7 @@ export default function UpdateProduct() {
         const frozenInput = useRef();
     
         const[food, setFood]  = useState(true);
-        const url = "http://localhost:9005/";
+        const url = "https://frittte.azurewebsites.net";
     
         async function UpdateProduct(){
             const updatedProduct = {
@@ -24,7 +24,7 @@ export default function UpdateProduct() {
                 frozen:frozenInput.current.value,
             };
             try{
-                await axios.post(`${url}/updateFoodItem`,updatedProduct);
+                await axios.put(`${url}/updateFoodItem`,updatedProduct);
                 if (food === true){
                     setFood(false);
                 } else {

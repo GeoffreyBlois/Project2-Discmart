@@ -70,18 +70,18 @@ export default function AddProduct() {
     return(
 
         <>
-        <input placeholder="Type a Food to Search for it" ref={itemInput}></input>
+        <input className="Placeholder"  placeholder="Type a Food to Search for it" ref={itemInput}></input>
         <button onClick={getItem}>Press to Find a Food item</button>
         <br></br>
         <br></br>
-        <input placeholder="Enter your item id" ref={idInput}></input>
+        <input className="Placeholder" placeholder="Enter your item id" ref={idInput}></input>
         {/* <input placeholder="Enter your item name" ref={itemNameInput}></input> */}
-        <input placeholder="Enter your item cost" ref={costInput}></input>
+        <input className="Placeholder" placeholder="Enter your item cost" ref={costInput}></input>
         <br></br>
         <br></br>
-        <input placeholder="Enter your item weight" ref={weightInput}></input>
-        <input placeholder="Enter your item volume" ref={volumeInput}></input>
-        <input placeholder="Is your item frozen" ref={frozenInput}></input>
+        <input className="Placeholder"  placeholder="Enter your item weight" ref={weightInput}></input>
+        <input className="Placeholder"  placeholder="Enter your item volume" ref={volumeInput}></input>
+        <input className="Placeholder"  placeholder="Is your item frozen" ref={frozenInput}></input>
 
         <br></br>
         <br></br>

@@ -18,7 +18,7 @@ export default function ViewMyOrders() {
 
         try {
             
-            const response = await fetch(`http://localhost:9006/findAllMyOrders/${user.username}`);
+            const response = await fetch(`https://frittte.azurewebsites.net/findAllMyOrders/${user.username}`);
             const myOrders = await response.json();
             const myOrdersRows = myOrders.map((e) => {
                 return (

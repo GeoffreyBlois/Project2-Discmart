@@ -4,17 +4,18 @@ import axios from "axios";
 
 export default function DeleteProduct() {
 
-    const url = "http://localhost:9005";
+    const url = "https://frittte.azurewebsites.net";
     const itemNameInput = useRef();
 
     async function deletingProduct(){
-        const product = {
-            itemName:itemNameInput.current.value,
-        }
-    
+
+        const product = itemNameInput.current.value
+        
+      console.log(product);
+      console.log(2222);
     
     try {
-    const response = await axios.delete(`${url}/food/food?id=${product}`);
+    const response = await axios.delete(`${url}/deleteFoodItem?id=${product}`);
     console.log(response.data);
     } catch (error) {
     console.error(error.response.data);

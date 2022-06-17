@@ -4,7 +4,7 @@ import { useRef } from "react";
 export default function Payment() {
   
 
-    const url = "http://localhost:9005/";
+    const url = "https://frittte.azurewebsites.net";
     
 
     const creditCardInput = useRef();
@@ -13,7 +13,7 @@ export default function Payment() {
   
     async function paynow() {
 
-        const CCResponse = await axios.get(`${url}/findCard?findCard=${creditCardInput.current.value}`)
+        const CCResponse = await axios.get(`${url}/findCard?findCreditCard=${creditCardInput.current.value}`)
         
         const user = {
 
@@ -29,7 +29,7 @@ export default function Payment() {
              
     
         try {
-            const response = await axios.put(`${url}updateLimit`, user);
+            const response = await axios.put(`${url}/updateLimit`, user);
             console.log(response.data);
          
         } catch (error) {
@@ -44,10 +44,10 @@ export default function Payment() {
                 <br></br>
                 <br></br>
                 <br></br>
-                <input placeholder="Enter creditCardInput username" ref={creditCardInput}></input>
+                <input placeholder="Enter your credit card number" ref={creditCardInput}></input>
                 <br></br>
                 <br></br>
-                <input placeholder="creditCradNameInput" ref={paymentInput}></input>
+                <input placeholder="Enter your payment amount" ref={paymentInput}></input>
                 <br></br>
                 <br></br>
                 <br></br>
