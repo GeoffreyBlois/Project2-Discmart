@@ -34,6 +34,7 @@ export default function AccountRegister() {
         try {
             const response = await axios.post(`${url}/customer/register`, user);
             console.log(response.data);
+            console.log(response.data);
          
         } catch (error) {
             console.error(error.response.data);
