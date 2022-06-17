@@ -6,7 +6,7 @@ import { userContext } from "../../App";
 
 export default function ViewAllFood() {
     
-    const [user, setUser] = useContext(userContext);
+    const [user] = useContext(userContext);
     const [showLog, setShowLogin] = useState(false);
     const navigate = useNavigate();
 

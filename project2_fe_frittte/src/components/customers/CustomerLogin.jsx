@@ -42,7 +42,7 @@ export default function CustomerLogin(){
     
     return(
         <>
-           <div class="header">
+           <div className="header">
              <h3>Please Login Below</h3>
             </div>
         <center>
@@ -52,7 +52,7 @@ export default function CustomerLogin(){
         <br></br>
         <input TextField style ={{width: '15%' , borderWidth: 1 }}  placeholder="Enter your Password" ref={passwordInput}></input> 
         <br></br>
-        <Button onClick={Login} >Login</Button>
+        <Button style={{borderRadius: 35, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={Login} >Login</Button>
         </center>
         
         

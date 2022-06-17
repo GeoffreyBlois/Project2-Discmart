@@ -4,7 +4,7 @@ import { userContext } from "../../App";
 
 export default function ViewMyOrders() {
 
-    const [user, setUser] = useContext(userContext);
+    const [user] = useContext(userContext);
     
     const [body, setBody] = useState([]);
 
@@ -38,9 +38,10 @@ export default function ViewMyOrders() {
     }
     return (
         <>
+            <div className="header">
             <h3>Your orders</h3>
-            
-            
+            </div>
+            <center>
             <table>
                 <thead>
                     <tr>
@@ -51,7 +52,7 @@ export default function ViewMyOrders() {
                 </thead>
                 <tbody>{body}</tbody>
             </table>
-            
+            </center>
         </>
     )
 }

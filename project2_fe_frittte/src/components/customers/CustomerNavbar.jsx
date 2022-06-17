@@ -6,7 +6,7 @@ import Dash from "../../DashBoard.jpg";
 
 
 export default function CustomerNavBar(){
-    const [user, setUser] = useContext(userContext);
+    const [user] = useContext(userContext);
     
     
     const navigate = useNavigate();
@@ -28,6 +28,7 @@ export default function CustomerNavBar(){
             <center>
             <h2>Order</h2>
             <br></br>
+            <div className="buttonUI">
             <Button style={{borderRadius: 35, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={() => navigate("/create-an-order")}>Order</Button>
             <br></br>
             <br></br>
@@ -35,6 +36,7 @@ export default function CustomerNavBar(){
             <br></br>
             <br></br>
             <Button style={{borderRadius: 35, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={() => navigate("/update-an-order")}>Update Order</Button>
+            </div>
             </center>
             </div>
             <center>
