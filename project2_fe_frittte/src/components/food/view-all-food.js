@@ -4,7 +4,6 @@ import { useState, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../../App";
 import { Button } from "@mui/material";
-import Image from "../../Frittte.jpg"
 import Logo from "../../Walmartlogo.jpg";
 import { blue } from "@mui/material/colors";
 
