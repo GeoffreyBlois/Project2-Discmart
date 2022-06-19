@@ -108,18 +108,12 @@
     font-size: 62,22%;
   }
   .header img{
-    width: 100px;
+    width: 90px;
     float:left
   }
   .headerPic img{
-<<<<<<< HEAD
-    
-    width: 90%;
-    height: 70%;
-=======
     width: 100%;
-    height: 100%;
->>>>>>> f99769a7ecc3a78e7c20ae26d29719a444f4d0c0
+    height: 70%;
   }
   
   .header h1 {
@@ -239,15 +233,10 @@ h8 {
 
 /* ====================================================================================================== */
 .body4 {
-<<<<<<< HEAD
   font-family: "Lucida Handwriting", monospace;
   background-color: #FDBB2F;
   width: 1920px;
     height: 737px;
-=======
-  
-  background-color: white;
->>>>>>> f99769a7ecc3a78e7c20ae26d29719a444f4d0c0
 }
 
   .wrapper {
@@ -332,17 +321,27 @@ h8 {
   }
 
 /* ===================================== */
-
+.p4 {
+  font-family: "Times New Roman", Times, serif;
+  background-color: rgb(95, 129, 241);
+  color: rgb(62, 24, 211);
+}
 .p3 {
   font-family: "Lucida Handwriting", monospace;
   font-size: 1.3em; /* 40px/16=2.5em */
 }
 .p2 {
   font-family: "Times New Roman", Times, serif;
-  background-color: black;
-  color: white;
+ 
 }
 .p1 {
   font-family: "Lucida Handwriting", monospace;
   font-size: 1.3em; /* 40px/16=2.5em */
+}
+/* =====================================place holder tag id  */
+
+
+#inputID::placeholder {
+    color: #2e0101;
+    opacity: 1;
 }

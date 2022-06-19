@@ -20,7 +20,7 @@ export default function MainNavBar(){
             <div className="mainBar">
             
              <center>
-<<<<<<< HEAD
+{/* <<<<<<< HEAD
            <body className="body4">
             <Button style={{borderRadius: 15, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={() => navigate("/login")}>Login</Button>
             <Button style={{borderRadius: 15, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}}onClick={() => navigate("/register")}>Sign Up</Button>
@@ -28,12 +28,12 @@ export default function MainNavBar(){
             <img src={yellowbody}></img>
             </body>
             </center>
-=======
+======= */}
             
             <Button style={{borderRadius: 35, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={() => navigate("/login")}>Login</Button>
             <Button style={{borderRadius: 35, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}}onClick={() => navigate("/register")}>Sign Up</Button>
             <Button style={{borderRadius: 35, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={() => navigate("/Food-Items")}>View all Food Items</Button>
->>>>>>> f99769a7ecc3a78e7c20ae26d29719a444f4d0c0
+
             
             </center>  
             </div>
