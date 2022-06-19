@@ -1,8 +1,10 @@
 import { Button } from "@mui/material";
+import { grey } from "@mui/material/colors";
 import axios from "axios";
 import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../../App";
+import Logo from "../../Walmartlogo.jpg";
 
 export default function CustomerLogin(){
     
@@ -43,17 +45,21 @@ export default function CustomerLogin(){
     return(
         <>
         <center>
-           <div className="header">
-             <h3 className="p2"> Please Login Below</h3>
-            </div>
+                
+                <div className="header">
+                <img src={Logo} alt="Logo"></img>
+                <h3><center>Please Login Below</center></h3>
+                
+                 </div>
+           
             <body className="body4">
               <br></br>
-                 <input TextField className="p3" id="inputID" style ={{width: '15%' , borderWidth: 10, background:"lightBlue"}} f  placeholder="Enter your Username" ref={usernameInput}></input>
+                 <input TextField className="p3" id="inputID" style ={{width: '15%' , borderWidth: 10, borderColor:grey, background:"lightBlue"}} f  placeholder="Enter your Username" ref={usernameInput}></input>
               <br></br>
-                 <input TextField className="p1" id="inputID" type={'password'} style ={{width: '15%' , borderWidth: 10, color:"black", background:"lightBlue"}}  placeholder="Enter your Password" ref={passwordInput}></input> 
+                 <input TextField className="p1" id="inputID" type={'password'} style ={{width: '15%' , borderWidth: 10, borderColor:"grey", color:"black", background:"lightBlue"}}  placeholder="Enter your Password" ref={passwordInput}></input> 
               <br></br>
               <br></br>
-               <Button style={{borderRadius: 35, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={Login} >Login</Button>
+               <Button style={{borderRadius: 15, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={Login} >Login</Button>
            
         </body>
         </center>

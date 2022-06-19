@@ -8,15 +8,13 @@
     letter-spacing: 0.5px;
   }
 
-  h2{
-    color: white
-  }
+  
   .header {
-    padding: 60px;
-    text-align: center;
+    padding: 40px;
+    text-align: justify;
     background: #0D7AB2;
     color: #FDBB2F;
-    font-size: 40px;
+    font-size: 50px;
   }
 
   .logOut{
@@ -63,11 +61,12 @@
 /* ===================================Headers Bar=================================================================== */
 
   .header2 {
-    padding: 20px;
+    padding: 35px;
     text-align: center;
     background: #0D7AB2;
     color: #1b1508;
-    font-size: 20px;
+    font-size: 30px;
+   
   }
   .header2 h1 {
     position: relative;
@@ -76,16 +75,16 @@
   }
   .header2 img {
     float: left;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     background: #555;
   }
 
-  h2 {
-    font-size: 2rem;
+  .h2 {
+    font-size: 1rem;
     letter-spacing: 0.9px;
     background: linear-gradient(
-      90deg,
+  
       #FDBB2F 69%,
       rgba(147, 76, 19, 0) 120%
 
@@ -323,8 +322,11 @@ h8 {
 /* ===================================== */
 .p4 {
   font-family: "Times New Roman", Times, serif;
+ 
   background-color: rgb(95, 129, 241);
-  color: rgb(62, 24, 211);
+  color: #FDBB2F;
+  position: fixed;
+  
 }
 .p3 {
   font-family: "Lucida Handwriting", monospace;
@@ -342,6 +344,6 @@ h8 {
 
 
 #inputID::placeholder {
-    color: #2e0101;
+    color: rgb(46, 46, 46);
     opacity: 1;
 }
