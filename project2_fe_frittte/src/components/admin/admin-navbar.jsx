@@ -36,7 +36,6 @@ export default function AdminNavBar() {
 
             <img src={adminimage}></img>
             <br></br>
-            <img src={yellowbody}></img>
             </body>
             
 
