@@ -1,9 +1,18 @@
 
 import axios from "axios";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { userContext } from "../../App";
+import { Button } from "@mui/material";
+import Image from "../../Frittte.jpg"
+import Logo from "../../Walmartlogo.jpg";
 
 export default function ViewAllFood() {
     
+    const [user] = useContext(userContext);
+    const [showLog, setShowLogin] = useState(false);
+    const navigate = useNavigate();
+
     const [itemNameBody, setItemName] = useState()
     const [num, setNum] = useState(0);
     const [CHOCDF, setCHOCDF] = useState()
@@ -48,23 +57,28 @@ export default function ViewAllFood() {
 }
     async function createOrder(){
         
-        const current = new Date();
-         const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-        const order = {
-            
-            id: num,
-            orderDate: date,
-            itemName: itemName,
-            comment: input4.current.value,
-            customerUsername: user.username
-        };
+        if(user.username === "Guest"){
+            setShowLogin(!showLog)
+        }else{
 
-        try {
-            const response = await axios.post("https://frittte.azurewebsites.net/order", order, {withCredentials: true});
-            console.log(response.data);
-        } catch (error) {
-            console.error(error.response.data);
-            alert(error.response.data);
+            const current = new Date();
+            const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+            const order = {
+            
+                id: num,
+                orderDate: date,
+                itemName: itemNameBody,
+                comment: input4.current.value,
+                customerUsername: user.username
+            };
+
+            try {
+                const response = await axios.post("https://frittte.azurewebsites.net/order", order);
+                console.log(response.data);
+            } catch (error) {
+                console.error(error.response.data);
+                alert(error.response.data);
+            }
         }
     }
 
@@ -72,27 +86,43 @@ export default function ViewAllFood() {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
 
-    const click = () => {setNum(randomNumberInRange(1,100))}
+    function toLogin(){
+        navigate("/login")
+    }
+
+    const click = () => {setNum(randomNumberInRange(1,100000))}
+
     return (
         <>
-            <h3>Search for a Food item</h3>
+        <center>
+        <div class="header2">
+             <img src={Logo} alt="Logo"></img>
+            
             <br></br>
-            <br></br>
-            <br></br>
-            <input placeholder="Type a Food to Search for it" ref={itemInput}></input>
-            <button onClick={getItem}>Press to Find a Food item</button>
+            
+            <h2>Here you can Search for your favorite FoodItem</h2>
+            </div>
+            <body className="body2">
+            
+
+            <input className="search" placeholder="Type a Food to Search for it" ref={itemInput}></input>
+            <Button variant="contained" onClick={getItem}>Press to Find a Food item</Button>
             <br></br>
             <h3>{itemNameBody}</h3>
-            <img src={img}></img>
+            <img className="Placeholder2" src={img}></img>
             <h3>Cholesterol = {CHOCDF}</h3>
             <h3>Energy = {ENERC_KCAL}</h3>
             <h3>Fat = {FAT}</h3>
             <h3>Fiber = {FIBTG}</h3>
             <h3>Protien = {PROCNT}</h3>
-            <br></br>
-            <input placeholder="Add a Comment if you would like to change anything" ref={input4}></input>
-            <button onClick={() => {click(); createOrder()}}>Order</button>
-    
+            <input className="Placeholder"  placeholder="Add a Comment if you would like to change anything" ref={input4}></input>
+            <Button variant="contained" onClick={() => {click(); createOrder()}}>Add comment to order it right now</Button>
+            {showLog && <p className="Placeholder">To Order You need to Login. Press the Button Below to be taken to the Login Page</p> }
+            {showLog && <Button variant="contained" onClick={toLogin} >To Login</Button> }
+            </body>
+            </center>
+           
+            
             
         </>
     )

@@ -5,9 +5,6 @@ export default function AdminDashboard() {
 
         <>
         <AdminNavBar/>
-            <center>
-                <h1> Hello FRITTTE Admin, welcome to your Dashboard</h1>
-            </center>
         </>
     );
    

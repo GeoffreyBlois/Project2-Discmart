@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useRef, useContext } from "react";
 import { userContext } from "../../App";
+import { Button } from "@mui/material";
 
 export default function UpdateOrder() {
 
+
     const [user, setUser] = useContext(userContext);
     const [num, setNum] = useState(0);
+
     
     
     const input1 = useRef();
@@ -14,11 +17,13 @@ export default function UpdateOrder() {
     
     
 
+
     async function updatedOrder() {
         
         const current = new Date();
         const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
         
+
         const item = {
             
             id: num,
@@ -30,15 +35,13 @@ export default function UpdateOrder() {
 
         try {
 
-            const response = await axios.post("http://localhost:9006/order", item );
+            const response = await axios.post("https://frittte.azurewebsites.net/order", item );
             
-            const response = await axios.put("http://localhost:9006/updateOrder", item);
-
             console.log(response.data);
             
             
         } catch (error) {
-            console.error(error.response.data);
+            console.error(error);
             alert(error.response.data);
         }
     }
@@ -51,8 +54,9 @@ export default function UpdateOrder() {
 
     return (
         <>
-
+            <div className="header">
             <h4>Order an item</h4>
+
             
             <input placeholder="Order Date" ref={input1}></input>
             <input placeholder="Item name" ref={input2}></input>
@@ -66,6 +70,8 @@ export default function UpdateOrder() {
             <input placeholder="Comment" ref={input4}></input>
             <button onClick={updatedOrder}>Update Order</button>
 
+
+ 
         </>
     )
 }
