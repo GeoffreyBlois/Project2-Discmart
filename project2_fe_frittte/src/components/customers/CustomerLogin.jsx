@@ -3,7 +3,6 @@ import axios from "axios";
 import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../../App";
-import yellowbody from "../../yellowbody.png";
 
 export default function CustomerLogin(){
     
@@ -47,22 +46,31 @@ export default function CustomerLogin(){
            <div className="header">
              <h3 className="p3"> Please Login Below</h3>
             </div>
+<<<<<<< HEAD
             <body className="body4">
             
                 
          
         
+=======
+>>>>>>> f99769a7ecc3a78e7c20ae26d29719a444f4d0c0
               <br></br>
                  <input TextField className="p3" style ={{width: '15%' , borderWidth: 10}} f  placeholder="Enter your Username" ref={usernameInput}></input>
               <br></br>
                  <input TextField className="p1" type={'password'} style ={{width: '15%' , borderWidth: 10 }}  placeholder="Enter your Password" ref={passwordInput}></input> 
               <br></br>
+<<<<<<< HEAD
               <br></br>
                <Button style={{borderRadius: 10, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={Login} >Login</Button>
         
               
         
         </body>
+=======
+               <Button style={{borderRadius: 35, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px" }} variant="contained" sx={{color:'#FDBB2F'}} onClick={Login} >Login</Button>
+           
+        
+>>>>>>> f99769a7ecc3a78e7c20ae26d29719a444f4d0c0
         </center>
         </>
     )
