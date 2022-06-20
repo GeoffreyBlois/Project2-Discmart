@@ -2,8 +2,10 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import { Button } from "@mui/material";
 import Logo from "../../Walmartlogo.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function AddProduct() {
+    const navigate = useNavigate();
 
     const idInput = useRef();
     const costInput = useRef();
@@ -22,6 +24,7 @@ export default function AddProduct() {
 
 
     const [img, setImg] = useState();
+    const [showCreate, setCreate] = useState(false);
 
 
     async function getItem(){
@@ -62,7 +65,8 @@ export default function AddProduct() {
                 setFood(false);
             } else {
                 setFood()
-            }    
+            }
+            setCreate(!showCreate)    
         } catch (error){
             console.error(error);
         }
@@ -72,31 +76,33 @@ export default function AddProduct() {
 
         <>
         <center>
-        <div class="header2">
+        <div class="header">
              <img src={Logo} alt="Logo"></img>
             
             <br></br>
-            
-            <h2>Find and Add your product</h2>
+            <center>
+            <h3>Find and Add your product</h3>
+            </center>
             </div>
             <body className="body4">
-        <input className="Placeholder"  placeholder="Type a Food to Search for it" ref={itemInput}></input>
-        <Button variant="contained"onClick={getItem}><h8>Press to Find a Food item</h8></Button>
+        <input TextField className="p3" id="inputID" style ={{width: '15%' , borderWidth: 10, borderColor:"gray",color:"black", background:"lightBlue"}}  placeholder="Type a Food to Search for it" ref={itemInput}></input>
+        <br></br>
+        <Button style={{borderRadius: 15, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px", color:"#FDBB2F"}} onClick={getItem}>Press to Find a Food item</Button>
         <br></br>
         <br></br>
 
-        <input className="Placeholder" placeholder="Enter your item id" ref={idInput}></input>
-        <input className="Placeholder" placeholder="Enter your item cost" ref={costInput}></input>
+        <input TextField className="p3" id="inputID" style ={{width: '15%' , borderWidth: 10, borderColor:"gray",color:"black", background:"lightBlue"}} placeholder="Enter your item id" ref={idInput}></input>
+        <input TextField className="p3" id="inputID" style ={{width: '15%' , borderWidth: 10, borderColor:"gray",color:"black", background:"lightBlue"}} placeholder="Enter your item cost" ref={costInput}></input>
 
         <br></br>
         <br></br>
-        <input className="Placeholder"  placeholder="Enter your item weight" ref={weightInput}></input>
-        <input className="Placeholder"  placeholder="Enter your item volume" ref={volumeInput}></input>
-        <input className="Placeholder"  placeholder="Is your item frozen" ref={frozenInput}></input>
+        <input TextField className="p3" id="inputID" style ={{width: '15%' , borderWidth: 10, borderColor:"gray",color:"black", background:"lightBlue"}}  placeholder="Enter your item weight" ref={weightInput}></input>
+        <input TextField className="p3" id="inputID" style ={{width: '15%' , borderWidth: 10, borderColor:"gray",color:"black", background:"lightBlue"}}  placeholder="Enter your item volume" ref={volumeInput}></input>
+        <input TextField className="p3" id="inputID" style ={{width: '15%' , borderWidth: 10, borderColor:"gray",color:"black", background:"lightBlue"}}  placeholder="Is your item frozen" ref={frozenInput}></input>
 
         <br></br>
         <br></br>
-            <h8>{itemName}</h8>
+            <h3>{itemName}</h3>
             <img className="Placeholder2" src={img}></img>
             <h3>Cholesterol = {CHOCDF}</h3>
             <h3>Energy = {ENERC_KCAL}</h3>
@@ -105,7 +111,12 @@ export default function AddProduct() {
             <h3>Protien = {PROCNT}</h3>
             <br></br>
         <br></br>
-        <Button variant="contained" onClick={createProduct}><h8>Create</h8></Button>
+        <Button style={{borderRadius: 15, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px", color:"#FDBB2F"}} variant="contained" onClick={createProduct}>Create</Button>
+        <br></br>
+        {showCreate && <h3>An item has been added to our database!</h3>}
+        <br></br>
+        <br></br>
+        <Button style={{borderRadius: 15, backgroundColor: "#0D7AB2", padding: "18px 36px",fontSize: "18px", color:"#FDBB2F"}} variant="contained"  onClick={() => navigate("/admindashboard")}>Admin Dashboard</Button>
         </body>
         </center>
        
